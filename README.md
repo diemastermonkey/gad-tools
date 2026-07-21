@@ -5,6 +5,9 @@ Selections from my personal collection of tools I've cobbled together over the y
 
 ## gad-scummvm-deploy
 
+$ python3 gad-scummvm-deploy.py
+Usage: gad-scummvm-deploy <Game Title> [Manual Name]
+
 Arguments:
 
   Arg 1: Game Title (mandatory)
