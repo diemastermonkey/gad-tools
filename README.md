@@ -1,5 +1,5 @@
 # gad-tools
-Some of my personal collection of tools I've cobbled together over the years.
+Selections from my personal collection of tools I've cobbled together over the years.
 
 # Selected descriptions
 
