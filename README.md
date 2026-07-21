@@ -33,8 +33,8 @@ It also performs various sanity checks, normalizing directory depth, fuzzy title
 Example run: 
 
 ```
-$ python3 gad-scummvm-deploy.py 'Last Crusade'
---- Deploying: Last Crusade ---
+$ python3 gad-scummvm-deploy.py 'Indiana Jones and the Last Crusade'
+--- Deploying: Indiana Jones and the Last Crusade ---
 
 Multiple file matches found:
 1. Indiana Jones and the Last Crusade (Floppy DOS VGA).zip
@@ -53,20 +53,19 @@ Multiple tag matches found:
 Select a tag (1-5): 3
 
 --- Planned Actions ---
-- CREATE DIRECTORY: Last Crusade
-- EXTRACT: Indiana Jones and the Last Crusade.rar -> Last Crusade
-- CREATE FILE: Last Crusade/Last Crusade.scummvm (Content: "scumm:indy3")
+- CREATE DIRECTORY: Indiana Jones and the Last Crusade
+- EXTRACT: Indiana Jones and the Last Crusade.rar -> Indiana Jones and the Last Crusade
+- CREATE FILE: Indiana Jones and the Last Crusade/Indiana Jones and the Last Crusade.scummvm (Content: "scumm:indy3")
 
 Proceed with deployment? [Y/n]: y
 
 Executing...
-
 Extracting from /mnt/d/Emulation_Roms/ScummVM/Indiana Jones and the Last Crusade.rar
 (...)
 All OK
 
 --- Deployment Complete ---
-New directory created: Last Crusade
+New directory created: Indiana Jones and the Last Crusade
 ```
 
 ## Other Tools...
