@@ -22,5 +22,5 @@ The point-and-click adventure engine "ScummVM" requires certain meta files and o
 3. Creates the appropriately named directory and meta data file (.scummvm)
 
 This really helps front-ends like "RetroBat" as well, which need to know how to list the game title.
-
+It also performs various sanity checks, normalizing directory depth, fuzzy title matching, etc.
 
