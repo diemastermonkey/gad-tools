@@ -68,4 +68,12 @@ All OK
 New directory created: Indiana Jones and the Last Crusade
 ```
 
+## nicely - Just run a thing nicely
+Convenient script to simply run (arg) command at maximum 'niceness' (minimum CPU slice). I use this all the time as in...
+
+```
+$ nicely htop 
+```
+
 ## Other Tools...
+
