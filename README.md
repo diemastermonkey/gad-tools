@@ -3,7 +3,7 @@ Selections from my personal collection of tools I've cobbled together over the y
 
 # Selected descriptions
 
-## gad-scummvm-deploy: Deploy Scummvm Games Correctly, Easily
+## gad-scummvm-deploy - Deploy Scummvm Games Easily
 
 $ python3 gad-scummvm-deploy.py
 
