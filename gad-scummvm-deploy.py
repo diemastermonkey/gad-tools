@@ -1,8 +1,17 @@
+# gad-scummvm-deploy
+# ScummVM archive deployer for retrogamers, front end launchers, etc
+# Note: Requires .csv input file from https://www.scummvm.org/compatibility/
+# unhacker@gmail.com / github.com/diemastermonkey / 2026
+#
+
 import os
 import sys
 import subprocess
 import re
 import csv
+
+# In case you change it later
+GShortnameCSVFile = 'gad-scummvm-deploy.csv'
 
 def normalize(text):
     return re.sub(r'[^a-zA-Z0-9]', '', text).lower()
@@ -75,12 +84,11 @@ def check_archive_contents(file_path):
 
 def main():
     if len(sys.argv) < 2:
-        print('Usage: gad-scummvm-deploy <Game Title> [Manual Name]')
+        print('Usage: ', sys.argv[0], ' <Game Title> [Manual Name]')
         sys.exit(1)
 
     game_title = sys.argv[1]
     manual_name = sys.argv[2] if len(sys.argv) > 2 else game_title
-    csv_file = 'GAD_RetroBat_ScummVM_Tag_List.csv'
     
     print(f'--- Deploying: {game_title} ---')
 
@@ -109,12 +117,12 @@ def main():
         sys.exit(1)
 
     # 4. Create ScummVM File Tag Lookup
-    if not os.path.exists(csv_file):
-        print(f'Abort: {csv_file} not found.')
+    if not os.path.exists(GShortnameCSVFile):
+        print(f'Abort: {GShortnameCSVFile} not found.')
         sys.exit(1)
 
     tag_matches = []
-    with open(csv_file, mode='r', encoding='utf-8') as f:
+    with open(GShortnameCSVFile, mode='r', encoding='utf-8') as f:
         reader = csv.reader(f)
         for row in reader:
             if len(row) >= 2:
@@ -123,7 +131,7 @@ def main():
                     tag_matches.append((name, tag))
 
     if not tag_matches:
-        print(f'Abort: No matching tag found in {csv_file} for "{game_title}"')
+        print(f'Abort: No matching tag found in {GShortnameCSVFile} for "{game_title}"')
         sys.exit(1)
     
     selected_tag = ""

@@ -1,0 +1,56 @@
+Tool name: gad-scummvm-deploy 
+Arguments: 
+  Arg 1: Game Title (mandatory)
+  Arg 2: Manual game name for .scummvm file (optional) 
+
+What: 
+User provides a game 'title' in the form (for example): 
+Codename Iceman 
+
+Operating in the current directory only
+  # Sanity Check
+  Ensure no directory exists which closely matches the title
+  Matches must include variations like (examples) 
+    Codename Iceman (Floppy) - Europe
+    The Codename Iceman Game R2
+    CodenameIceman
+    Code-Name Iceman
+  If a directory exists, report its path and abort
+
+  # Locate Game Files
+  Next, locate files (only) which match game title
+  Files can include .zip, .7z, or .rar
+  Matches must include variations as previously described
+  If more than one match found
+    List all matches as a numbered list
+    Prompt user to select one match (only) or to exit
+
+  # Validate Game Contents
+  When matching file selected
+    Check the contents of the compressed file
+    If the contents include a 'top level' directory
+      Ensure this top level is ignored:
+        The topmost directory 'with files' should be treated 
+        as the root from which to extract files
+
+  # Extract Game
+  Create directory name with Game Title (arg 1)
+  Extract contents of selected file (from indicated 'root')
+  into the newly created directory
+
+  # Create ScummVM File
+  Locate the Game Title in the file 'RetroBat_ScummVM_Tag_List.csv'
+  IF file not located, abort with message
+  IF Game Title not located in file, abort with message
+  IF multiple matching entries
+    List matches as a numbered list
+    Prompt user to selected on (only) or to exit
+  When matching entry selected
+  Create a new plain text file [Game Title].scummvm 
+  Place the matching 'tag' taken from the 2nd column of RetroBat_ScummVM_Tag_List.csv, 
+  into the file on the first line, as in in this example 'Codename Iceman.scummvm':
+    sci:iceman  
+ 
+  # End 
+  Summarize these operations to the user, and list the new directory (not its contents).
+
